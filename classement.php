@@ -17,6 +17,7 @@ require_once('header_footer.php') ;
 <div>
     <ul>
         <li>NIVEAU</li>
+        <li>DATE</li>
         <li>RANG</li>
         <li>PERSO</li>
         <li>JOUEUR</li>
@@ -41,6 +42,9 @@ require_once('header_footer.php') ;
                         <!-- affichage sous liste -->
                         <label for="<?= 'classement_checkbox_niveau_'.(26-$i) ?>"><img src="" alt="plus"></label>
                     </li>
+
+                    <!-- affichage de la date -->
+                    <li>le <?= rand(1,31).'/'.rand(1,12).'/'.rand(2016,2017) ?></li>
 
                     <!-- affichage rang (toujours à 1) -->
                     <li>#1</li>
@@ -69,6 +73,8 @@ require_once('header_footer.php') ;
                 <?php for ($j = 2;$j<=5;$j++){ ?>
                     <ul>
                         <li><?= 26-$i ?></li>
+
+                        <li>le <?= rand(1,31).'/'.rand(1,12).'/'.rand(2016,2017) ?></li>
 
                         <li><?= '#'.$j ?></li>
 

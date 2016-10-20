@@ -42,3 +42,28 @@ function ajouterUtilisateur($bdd, $formulaire){
         print "Error!: " . $e->getMessage() . "</br>";
     }
 }
+
+function ajouterCommentaire($bdd, $formulaire){
+    try {
+        $requete = $bdd->prepare('INSERT INTO commentaires(contenu, dateCommentaire, idUtilisateur, idNews) VALUES (:contenu, :dateCommentaire, :idUtilisateur, :idNews)');
+        $requete->execute(array(
+            'contenu' => $formulaire['contenu'],
+            'dateCommentaire' => $formulaire['dateCommentaire'],
+            'idUtilisateur' => $formulaire['idUtilisateur'],
+            'idNews' => $formulaire['idNews']
+        ));
+    } catch (\PDOException $e) {
+        print "Error!: " . $e->getMessage() . "</br>";
+    }
+}
+
+function supprimerCommentaire($bdd, $idCommentaire)
+{
+    try {
+
+        $bdd->query('DELETE FROM commentaires WHERE id='.$idCommentaire);
+
+    } catch (\PDOException $e) {
+        print "Error!: " . $e->getMessage() . "</br>";
+    }
+}
