@@ -14,9 +14,7 @@ require_once('header_footer.php') ;
     <link rel="stylesheet" href="CSS/news.css">
 </head>
 <body>
-
-<?php headerHTML(); ?>
-<div id="main">
+    <?php headerHTML(); ?>
     <div id="content" class="center">
         <?php
         if (!empty($_POST['envoi_commentaire'])) {
@@ -87,8 +85,7 @@ require_once('header_footer.php') ;
             </div>
         <?php } ?>
     </div>
-</div>
-<?php footerHTML(); ?>
+    <?php footerHTML(); ?>
 
 </body>
 </html>

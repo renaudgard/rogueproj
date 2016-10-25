@@ -12,14 +12,10 @@
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
-
-<?php headerHTML(); ?>
-<div id="main">
+    <?php headerHTML(); ?>
     <div id="content" class="center">
 
     </div>
-</div>
-<?php footerHTML(); ?>
-
+    <?php footerHTML(); ?>
 </body>
 </html>

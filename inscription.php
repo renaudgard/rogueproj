@@ -14,7 +14,7 @@ require_once('header_footer.php') ;
     <link rel="stylesheet" href="CSS/inscription.css">
 </head>
 <body>
-<?php headerHTML(); ?>
+
 
 <?php
 if (!empty($_POST['inscription']))
@@ -41,8 +41,7 @@ if (!empty($_POST['inscription']))
     }
 }
 ?>
-
-<div id="main">
+    <?php headerHTML(); ?>
     <div id="content" class="center">
         <h2 class="title">inscription</h2>
         <form method="post" action="">
@@ -68,10 +67,7 @@ if (!empty($_POST['inscription']))
         </form>
 
     </div>
-</div>
-
-
-<?php footerHTML(); ?>
+    <?php footerHTML(); ?>
 </body>
 </html>
 
