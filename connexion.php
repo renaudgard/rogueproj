@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('bddconnect.php') ;
 require_once('fonctions.php') ;
 require_once('header_footer.php') ;

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('header_footer.php') ;
 ?>
 
@@ -62,10 +63,10 @@ require_once('header_footer.php') ;
                                 <!-- affichage du build -->
                                 <li class="competences">
                                     <?php $tabMana = ['feu', 'terre', 'eau'];
-                                        for ($k = 0; $k < 3; $k++) { ?>
-                                            <?= rand(0, 10) ?>
-                                            <img src="Resources/icons/<?= $tabMana[$k] ?>.png"<?= $tabMana[$k] ?>" alt="<?= $tabMana[$k] ?>">
-                                        <?php } ?>
+                                    for ($k = 0; $k < 3; $k++) { ?>
+                                        <?= rand(0, 10) ?>
+                                        <img src="Resources/icons/<?= $tabMana[$k] ?>.png"<?= $tabMana[$k] ?>" alt="<?= $tabMana[$k] ?>">
+                                    <?php } ?>
                                 </li>
 
                                 <!-- affichage du temps de jeu -->

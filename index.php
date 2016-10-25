@@ -1,4 +1,5 @@
-<?php 
+<?php
+    session_start();
     require_once('header_footer.php') ;
 ?>
 
@@ -7,18 +8,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Accueil Rogue Project</title>
-    <link rel="stylesheet" href="CSS/reset.css">
-    <link rel="stylesheet" href="CSS/global.css">
-    <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
 
 <?php headerHTML(); ?>
-<div id="main">
-    <div id="content" class="center">
-
-    </div>
-</div>
+<br>
 <?php footerHTML(); ?>
 
 </body>

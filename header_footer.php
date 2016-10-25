@@ -6,25 +6,28 @@ function headerHTML(){ ?>
             <div id="header_title">
                 <h1>ROGUE PROJECT</h1>
                 <div id="header_connect">
-                    <?php if(isset($_SESSION['id'])) {
-                        echo '<a href="">INSCRIPTION</a>'.PHP_EOL;
-                        echo '<a href="">CONNEXION</a>'.PHP_EOL;
+                    <?php if(!isset($_SESSION['id'])) {
+                        echo '<a href="/inscription.php">INSCRIPTION</a>'.PHP_EOL;
+                        echo '<a href="/connexion.php">CONNEXION</a>'.PHP_EOL;
                     } else {
                         echo '<a href="">MON COMPTE</a>'.PHP_EOL;
-                        echo '<a href="">DECONNEXION</a>'.PHP_EOL;
+                        echo '<a href="/deconnexion.php">DECONNEXION</a>'.PHP_EOL;
                     }
                     ?>
                 </div>
             </div>
 
             <ul class="big">
-                <li id="selected"><a href="">ACCUEIL</a></li>
+                <li id="selected"><a href="/index.php">ACCUEIL</a></li>
                 <li><a href="">PRESENTATION DU JEU</a></li>
-                <li><a href="">NEWS</a></li>
-                <li><a href="">CLASSEMENT</a></li>
+                <li><a href="/news.php">NEWS</a></li>
+                <li><a href="/classement.php">CLASSEMENT</a></li>
                 <li><a href="">CONTACT</a></li>
-                <?php if(isset($_SESSION['admin'])) {
-                    echo '<li><a href="">ADMIN</a></li>';
+                <?php if(isset($_SESSION['admin']))
+                {
+                    if ($_SESSION['admin'] == 1) {
+                        echo '<li><a href="">ADMIN</a></li>';
+                    }
                 }
                 ?>
             </ul>

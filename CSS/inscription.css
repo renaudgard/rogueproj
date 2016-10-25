@@ -31,6 +31,7 @@ input {
     width: 100%;
     background: #fff;
     padding : 0 .5em;
+    font-size : .8571em;
 }
 
 #sign_buttons {
@@ -53,7 +54,6 @@ input {
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: green;
     font-weight : bold;
-    font-size : .8571em;
 }
 
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */

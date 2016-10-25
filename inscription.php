@@ -1,5 +1,6 @@
 <?php
-//require_once('bddconnect.php') ;
+session_start();
+require_once('bddconnect.php') ;
 require_once('fonctions.php') ;
 require_once('header_footer.php') ;
 ?>
@@ -32,7 +33,7 @@ if (!empty($_POST['inscription']))
 
         if (strcmp($formulaire['mdp'],$formulaire['confirmation_mdp']) == 0)
         {
-            //ajouterUtilisateur($bdd,$formulaire);
+            ajouterUtilisateur($bdd,$formulaire);
         }
         else
         {
@@ -47,20 +48,18 @@ if (!empty($_POST['inscription']))
         <h2 class="title">inscription</h2>
         <form method="post" action="">
 
-            <label for="identifiant">Pseudo </label><input type="text" id="identifiant" name="identifiant" class="sign_field" placeholder="
-<?php if(!empty($erreurformulaire['identifiant'])) {echo $erreurformulaire['identifiant'];}?>">
+            <label for="identifiant">Pseudo </label><input type="text" id="identifiant" name="identifiant" class="sign_field"
+            placeholder="<?php if(!empty($erreurformulaire['identifiant'])) {echo $erreurformulaire['identifiant'];}?>">
 
 
-            <label for="email">Adresse mail </label><input type="email" id="email" name="email" class="sign_field" placeholder="
-<?php if(!empty($erreurformulaire['email'])){echo $erreurformulaire['email'];}?>">
+            <label for="email">Adresse mail </label><input type="email" id="email" name="email" class="sign_field"
+            placeholder="<?php if(!empty($erreurformulaire['email'])){echo $erreurformulaire['email'];}?>">
 
 
-            <label for="mdp">Mot de passe </label><input type="password" id="mdp" name="mdp" class="sign_field" placeholder="
-<?php if(!empty($erreurformulaire['mdp'])){echo $erreurformulaire['mdp'];}?>">
+            <label for="mdp">Mot de passe </label><input type="password" id="mdp" name="mdp" class="sign_field" placeholder="<?php if(!empty($erreurformulaire['mdp'])){echo $erreurformulaire['mdp'];}?>">
 
-            <label for="confirmation_mdp">Confirmez votre mot de passe </label><input type="password" id="confirmation_mdp" name="confirmation_mdp" class="sign_field" placeholder="
-<?php if(!empty($erreurformulaire['confirmation_mdp'])){echo $erreurformulaire['confirmation_mdp'];}?>
-<?php if(!empty($message)){echo $message;} ?>">
+            <label for="confirmation_mdp">Confirmez votre mot de passe </label><input type="password" id="confirmation_mdp" name="confirmation_mdp" class="sign_field"
+            placeholder="<?php if(!empty($erreurformulaire['confirmation_mdp'])){echo $erreurformulaire['confirmation_mdp'];}?><?php if(!empty($message)){echo $message;} ?>">
             <div id="sign_buttons">
                 <input type="submit" value="Valider" name="inscription" class="sign_button">
                 <input type="reset" value="Annuler" class="sign_button">
