@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+    <title>Phaser - Making your first game, part 8</title>
+    <script src="//cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+    // map dimensions
+    var ROWS = 11,
+        COLS = 10;
+
+
+    Player = function (game, x, y, name)
+    {
+        x = x*GRID_SIZE;
+        y = (y+1)*GRID_SIZE;
+
+        Phaser.Sprite.call(this, game, x, y, name);
+    };
+
+    Player.prototype = Object.create(Phaser.Sprite.prototype);
+    Player.prototype.constructor = Player;
+
+    var game = new Phaser.Game(640, 704, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+    function preload() {
+        game.load.spritesheet('dude', 'assets/characters.png', 64, 128);
+        game.load.tilemap('map' , 'assets/deuxieme_test.json', null, Phaser.Tilemap.TILED_JSON);
+        game.load.image('tileImage', 'assets/terrains.png');
+        game.load.json('Calque d\'objet 1', 'assets/troisieme_test.json');
+    }
+    var player;
+    var cursors;
+    var GRID_SIZE = 64;
+
+
+    function create() {
+
+        map = game.add.tilemap('map');
+        map.addTilesetImage('terrains','tileImage');
+
+        layer = map.createLayer('Layer_base');
+        layer.resizeWorld();
+
+        var objets = game.cache.getJSON('Calque d\'objet 1');
+
+
+        player = new Player(game, 5, 5, 'dude');
+        player.frame = 3;
+
+
+        //  Our controls.
+        cursors = game.input.keyboard.createCursorKeys();
+
+        wasd = {
+            up: game.input.keyboard.addKey(Phaser.Keyboard.W),
+            down: game.input.keyboard.addKey(Phaser.Keyboard.S),
+            left: game.input.keyboard.addKey(Phaser.Keyboard.A),
+            right: game.input.keyboard.addKey(Phaser.Keyboard.D),
+        }
+    }
+    function update() {
+
+        cursors.left.onDown.add(function(){
+            movePlayer(-1, 0);
+        });
+
+        cursors.right.onDown.add(function(){
+            movePlayer(1, 0);
+        });
+
+        cursors.up.onDown.add(function(){
+            movePlayer(0, -1);
+        });
+
+        cursors.down.onDown.add(function(){
+            movePlayer(0, 1);
+        });
+
+        function movePlayer(x, y) {
+            // Because we're adding 64 to the player's position, we need to prevent cases where the user tries to move
+            // the player mid-move, knocking it off the grid. This is a crude way to do it but it works.
+            if (player.isMoving) { return; }
+            player.isMoving = true;
+            // Tween the player to the next grid space over 250ms, and when done,
+            // allow the player to make another move
+            game.add.tween(player).to({x: player.x + x * GRID_SIZE, y: player.y + y * GRID_SIZE}, 120, Phaser.Easing.Quadratic.InOut, true)
+                    .onComplete.add(function() { player.isMoving = false;}, this);}
+    }
+
+
+</script>
+
+</body>
+</html>

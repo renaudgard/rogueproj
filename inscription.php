@@ -9,6 +9,9 @@ require_once('header_footer.php') ;
 <head>
     <meta charset="UTF-8">
     <title>Inscription Rogue Project</title>
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/inscription.css">
 </head>
 <body>
 <?php headerHTML(); ?>
@@ -33,37 +36,39 @@ if (!empty($_POST['inscription']))
         }
         else
         {
-            $message = 'Les deux mots de passe ne correspondent pas.';
+            $message = 'Les deux mots de passe ne correspondent pas';
         }
     }
 }
 ?>
 
+<div id="main">
+    <div id="content" class="center">
+        <h2 class="title">inscription</h2>
+        <form method="post" action="">
 
-<form method="post" action="">
-    <fieldset>
-        <legend><h3>Inscription</h3></legend>
-        <label for="identifiant">Pseudo </label><br><input type="text" id="identifiant" name="identifiant">
-        <?php if(!empty($erreurformulaire['identifiant'])){echo $erreurformulaire['identifiant'];} ?>
-        <br>
+            <label for="identifiant">Pseudo </label><input type="text" id="identifiant" name="identifiant" class="sign_field" placeholder="
+<?php if(!empty($erreurformulaire['identifiant'])) {echo $erreurformulaire['identifiant'];}?>">
 
-        <label for="email">Adresse mail </label><br><input type="email" id="email" name="email">
-        <?php if(!empty($erreurformulaire['email'])){echo $erreurformulaire['email'];} ?>
-        <br>
 
-        <label for="mdp">Mot de passe </label><br><input type="password" id="mdp" name="mdp">
-        <?php if(!empty($erreurformulaire['mdp'])){echo $erreurformulaire['mdp'];} ?>
-        <br>
+            <label for="email">Adresse mail </label><input type="email" id="email" name="email" class="sign_field" placeholder="
+<?php if(!empty($erreurformulaire['email'])){echo $erreurformulaire['email'];}?>">
 
-        <label for="confirmation_mdp">Confirmez votre mot de passe </label><br><input type="password" id="confirmation_mdp" name="confirmation_mdp">
-        <?php if(!empty($erreurformulaire['confirmation_mdp'])){echo $erreurformulaire['confirmation_mdp'];} ?>
-        <?php if(!empty($message)){echo $message;} ?>
-        <br>
-        <input type="submit" value="Valider" name="inscription">
-        <input type="reset" value="Annuler">
-    </fieldset>
-</form>
 
+            <label for="mdp">Mot de passe </label><input type="password" id="mdp" name="mdp" class="sign_field" placeholder="
+<?php if(!empty($erreurformulaire['mdp'])){echo $erreurformulaire['mdp'];}?>">
+
+            <label for="confirmation_mdp">Confirmez votre mot de passe </label><input type="password" id="confirmation_mdp" name="confirmation_mdp" class="sign_field" placeholder="
+<?php if(!empty($erreurformulaire['confirmation_mdp'])){echo $erreurformulaire['confirmation_mdp'];}?>
+<?php if(!empty($message)){echo $message;} ?>">
+            <div id="sign_buttons">
+                <input type="submit" value="Valider" name="inscription" class="sign_button">
+                <input type="reset" value="Annuler" class="sign_button">
+            </div>
+        </form>
+
+    </div>
+</div>
 
 
 <?php footerHTML(); ?>
