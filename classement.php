@@ -7,7 +7,7 @@ require_once('header_footer.php') ;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Accueil Rogue Project</title>
+    <title>Classement Rogue Project</title>
     <link rel="stylesheet" href="CSS/reset.css">
     <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/classement.css">
@@ -15,7 +15,7 @@ require_once('header_footer.php') ;
 <body>
 
 <?php headerHTML(); ?>
-<div id="main">
+
     <div id="content" class="center">
         <h2 class="title">classement</h2>
         <div id="leaderboard">
@@ -109,7 +109,7 @@ require_once('header_footer.php') ;
             </ul>
         </div>
     </div>
-</div>
+
 <?php footerHTML(); ?>
 
 </body>

@@ -1,8 +1,3 @@
-#content {
-    min-height: 480px;
-    padding-bottom: 1em;
-}
-
 .news {
     padding: 1em;
     border-bottom: .2em dashed #464646;
@@ -24,15 +19,29 @@ img + p {
 
 textarea {
     width: 100%;
-    background: #828282;
+    background: #6b6a6a;
     border: none;
-    padding: 1em;
+    padding: .5em 1em;
     height: 4.5em;
     font-family: "Century Gothic", helvetica, arial, sans-serif;
+    border-radius: .6em .6em 0 .6em;
+    color: #222222;
+}
+
+input[type="submit"] {
+    align-self: flex-end;
+    background: #e5a700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    border: none;
+    padding: .5em 1em;
+    border-radius: 0 0 .4em .4em;
 }
 
 .comment_list {
     background: #464646;
+    margin-top: 1em;
 }
 
 .comment p:first-child {

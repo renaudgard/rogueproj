@@ -43,7 +43,7 @@ if (!empty($_POST['inscription']))
 }
 ?>
 
-<div id="main">
+
     <div id="content" class="center">
         <h2 class="title">inscription</h2>
         <form method="post" action="">
@@ -65,9 +65,8 @@ if (!empty($_POST['inscription']))
                 <input type="reset" value="Annuler" class="sign_button">
             </div>
         </form>
-
     </div>
-</div>
+
 
 
 <?php footerHTML(); ?>
