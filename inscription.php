@@ -61,8 +61,8 @@ if (!empty($_POST['inscription']))
             <label for="confirmation_mdp">Confirmez votre mot de passe </label><input type="password" id="confirmation_mdp" name="confirmation_mdp" class="sign_field"
             placeholder="<?php if(!empty($erreurformulaire['confirmation_mdp'])){echo $erreurformulaire['confirmation_mdp'];}?><?php if(!empty($message)){echo $message;} ?>">
             <div id="sign_buttons">
-                <input type="submit" value="Valider" name="inscription" class="sign_button">
-                <input type="reset" value="Annuler" class="sign_button">
+                <input type="submit" value="valider" name="inscription" class="sign_button">
+                <input type="reset" value="annuler" class="sign_button">
             </div>
         </form>
     </div>

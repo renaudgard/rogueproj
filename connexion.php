@@ -10,6 +10,9 @@ require_once('header_footer.php') ;
 <head>
     <meta charset="UTF-8">
     <title>Connexion Rogue Project</title>
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/inscription.css">
 </head>
 <body>
 <?php headerHTML(); ?>
@@ -34,7 +37,7 @@ if (!empty($_POST['connexion']))
         {
             $_SESSION['id']=$requete['id'];
             $_SESSION['admin']=$requete['admin'];
-            header('Location:http://rogueproj/index.php');
+            header('Location:/index.php');
         }
         else
         {
@@ -44,21 +47,19 @@ if (!empty($_POST['connexion']))
 }
 ?>
 
-
-<form method="post" action="">
-    <fieldset>
-        <legend><h3>Connexion</h3></legend>
-        <label for="identifiant">Pseudo </label><br><input type="text" id="identifiant" name="identifiant">
+<div id="content" class="center">
+    <h2 class="title">connexion</h2>
+    <form method="post" action="">
+        <label for="identifiant">Pseudo </label><input type="text" id="identifiant" name="identifiant" class="sign_field">
         <?php if(!empty($erreurformulaire['identifiant'])){echo $erreurformulaire['identifiant'];} ?>
-        <br>
-
-        <label for="mdp">Mot de passe </label><br><input type="password" id="mdp" name="mdp">
+        <label for="mdp">Mot de passe </label><input type="password" id="mdp" name="mdp" class="sign_field">
         <?php if(!empty($erreurformulaire['mdp'])){echo $erreurformulaire['mdp'];} ?>
-        <br>
-        <input type="submit" value="Connexion" name="connexion">
-        <input type="reset" value="Annuler">
-    </fieldset>
-</form>
+        <div id="sign_buttons">
+            <input type="submit" value="connexion" name="connexion" class="sign_button">
+            <input type="reset" value="annuler" class="sign_button">
+        </div>
+    </form>
+</div>
 
 <?php if(!empty($message)){echo $message;} ?>
 

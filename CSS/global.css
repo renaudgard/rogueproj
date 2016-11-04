@@ -50,7 +50,8 @@ header {
 header h1 {
     font-weight: bold;
     color : #e5a700;
-    font-size: 5em
+    font-size: 5em;
+    text-transform: uppercase;
 }
 
 header a {
@@ -67,6 +68,7 @@ header ul {
 header li {
     display: inline-block;
     padding: .5em 1em;
+    text-transform: uppercase;
 }
 
 header #selected {
@@ -90,6 +92,7 @@ header #selected > a {
     display: flex;
     flex-direction: column;
     align-self: flex-end;
+    text-transform: uppercase;
 }
 
 #header_connect a {
@@ -111,6 +114,7 @@ footer {
 footer a {
     text-decoration: none;
     color : #c9c9c9;
+    text-transform: none;
 }
 
 footer ul {
@@ -131,7 +135,10 @@ footer ul {
     color : #e5a700;
     padding: .8em 1em;
     flex: 1;
+    text-transform: uppercase;
 }
+
+
 
 #Footer_RogueProject ul {
     display: flex;

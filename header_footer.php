@@ -4,29 +4,29 @@ function headerHTML(){ ?>
     <header>
         <div class="center">
             <div id="header_title">
-                <h1>ROGUE PROJECT</h1>
+                <h1>rogue project</h1>
                 <div id="header_connect">
                     <?php if(!isset($_SESSION['id'])) {
-                        echo '<a href="/inscription.php">INSCRIPTION</a>'.PHP_EOL;
-                        echo '<a href="/connexion.php">CONNEXION</a>'.PHP_EOL;
+                        echo '<a href="/inscription.php">inscription</a>'.PHP_EOL;
+                        echo '<a href="/connexion.php">connexion</a>'.PHP_EOL;
                     } else {
-                        echo '<a href="">MON COMPTE</a>'.PHP_EOL;
-                        echo '<a href="/deconnexion.php">DECONNEXION</a>'.PHP_EOL;
+                        echo '<a href="">mon compte</a>'.PHP_EOL;
+                        echo '<a href="/deconnexion.php">déconnexion</a>'.PHP_EOL;
                     }
                     ?>
                 </div>
             </div>
 
             <ul class="big">
-                <li id="selected"><a href="/index.php">ACCUEIL</a></li>
-                <li><a href="">PRESENTATION DU JEU</a></li>
-                <li><a href="/news.php">NEWS</a></li>
-                <li><a href="/classement.php">CLASSEMENT</a></li>
-                <li><a href="">CONTACT</a></li>
+                <a href="/index.php"><li id="selected">Accueil</li></a>
+                <a href=""><li>Présentation du jeu</li></a>
+                <a href="/news.php"><li>News</li></a>
+                <a href="/classement.php"><li>Classement</li></a>
+                <a href=""><li>Contact</li></a>
                 <?php if(isset($_SESSION['admin']))
                 {
                     if ($_SESSION['admin'] == 1) {
-                        echo '<li><a href="">ADMIN</a></li>';
+                        echo '<a href=""><li>Admin</li></a>';
                     }
                 }
                 ?>
@@ -40,7 +40,7 @@ function footerHTML(){ ?>
         <div class="center">
             <nav>
                 <ul class="Footer_Nav big">
-                    <li id="Footer_RogueProject">ROGUE PROJECT
+                    <li id="Footer_RogueProject">Rogue Project
                         <ul>
                             <li>
                                 <a href=""><img src="Resources/icons/facebook.png" alt="logo facebook"></a>
@@ -52,22 +52,22 @@ function footerHTML(){ ?>
                                 <a href=""><img src="Resources/icons/youtube.png" alt="logo youtube"></a>
                             </li>
                             <li>
-                                <a href=""><img src="Resources/icons/github.png" alt="logo github"></a>
+                                <a href=""><img src="Resources/icons/github_light.png" alt="logo github"></a>
                             </li>
                         </ul>
                     </li>
-                    <li id="Footer_APropos">A PROPOS
+                    <li id="Footer_APropos">À propos
                         <ul>
                             <li><a href="">Le jeu</a></li>
                             <li><a href="">L'équipe</a></li>
                         </ul>
                     </li>
-                    <li id="Footer_PlanDuSite">PLAN DU SITE
+                    <li id="Footer_PlanDuSite">Plan du site
                         <ul>
-                            <li><a href="">Accueil</a></li>
+                            <li><a href="/index.php">Accueil</a></li>
                             <li><a href="">Présentation du jeu</a></li>
-                            <li><a href="">News</a></li>
-                            <li><a href="">Classement</a></li>
+                            <li><a href="/news.php">News</a></li>
+                            <li><a href="/classement.php">Classement</a></li>
                             <li><a href="">Contact</a></li>
                         </ul>
                     </li>

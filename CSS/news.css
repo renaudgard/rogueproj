@@ -17,6 +17,11 @@ img + p {
     margin : 1em 0;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 textarea {
     width: 100%;
     background: #6b6a6a;
