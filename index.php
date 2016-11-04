@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<?php headerHTML(); ?>
+<?php headerHTML("index"); ?>
 <div id="content" class="center">
 </div>
 <?php footerHTML(); ?>

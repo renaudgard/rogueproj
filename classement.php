@@ -14,7 +14,7 @@ require_once('header_footer.php') ;
 </head>
 <body>
 
-<?php headerHTML(); ?>
+<?php headerHTML("classement"); ?>
 
     <div id="content" class="center">
         <h2 class="title">classement</h2>

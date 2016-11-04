@@ -16,7 +16,7 @@ require_once('header_footer.php') ;
 </head>
 <body>
 
-<?php headerHTML(); ?>
+<?php headerHTML("news"); ?>
 
     <div id="content" class="center">
         <?php

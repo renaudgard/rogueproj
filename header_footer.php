@@ -1,6 +1,6 @@
 <?php
 
-function headerHTML(){ ?>
+function headerHTML($pageCourante = ''){ ?>
     <header>
         <div class="center">
             <div id="header_title">
@@ -18,15 +18,15 @@ function headerHTML(){ ?>
             </div>
 
             <ul class="big">
-                <a href="/index.php"><li id="selected">Accueil</li></a>
-                <a href=""><li>Présentation du jeu</li></a>
-                <a href="/news.php"><li>News</li></a>
-                <a href="/classement.php"><li>Classement</li></a>
-                <a href=""><li>Contact</li></a>
+                <a href="/index.php"><li <?php echo ($pageCourante == 'index') ? 'id="selected"': '' ; ?>>Accueil</li></a>
+                <a href=""><li <?php echo ($pageCourante == 'presentation') ? 'id="selected"': '' ; ?>>Présentation du jeu</li></a>
+                <a href="/news.php"><li <?php echo ($pageCourante == 'news') ? 'id="selected"': '' ; ?>>News</li></a>
+                <a href="/classement.php"><li <?php echo ($pageCourante == 'classement') ? 'id="selected"': '' ; ?>>Classement</li></a>
+                <a href=""><li>Contact</li <?php echo ($pageCourante == 'contact') ? 'id="selected"': '' ; ?>></a>
                 <?php if(isset($_SESSION['admin']))
                 {
                     if ($_SESSION['admin'] == 1) {
-                        echo '<a href=""><li>Admin</li></a>';
+                        echo '<a href="/admin.php"><li'; echo ($pageCourante == "admin") ? " id=\"selected\"": ""; echo '>Admin</li></a>';
                     }
                 }
                 ?>
